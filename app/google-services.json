@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "23570442084",
+    "project_id": "videochatandmessenger",
+    "storage_bucket": "videochatandmessenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23570442084:android:3634701b9d62a918087c71",
+        "android_client_info": {
+          "package_name": "com.egorpavlovich.coursework"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23570442084-fouj07nf7vgegqulpra07mn1urin07v6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvSK2f2EPA-RbXeXJYqPC150VUJ4LdYZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23570442084-fouj07nf7vgegqulpra07mn1urin07v6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
