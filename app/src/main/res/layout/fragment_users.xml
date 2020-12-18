@@ -6,11 +6,12 @@
     tools:context=".Fragments.UsersFragment">
 
     <LinearLayout
-        android:id="@+id/search_users"
+        android:id="@+id/layout_search_users"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="70sp">
         <EditText
+            android:id="@+id/search_users"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5sp"
@@ -19,7 +20,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@id/search_users"
+        android:layout_below="@id/layout_search_users"
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
