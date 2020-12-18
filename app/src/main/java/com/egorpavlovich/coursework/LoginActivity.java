@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView email, password;
     private ProgressBar progressBar;
     Button btn_login;
-    private TextView signUpBtn; //signUpBtn
+    private TextView signUpBtn;
 
     FirebaseAuth auth;
     //TextView forgot_password;
@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password_sign_in);
         btn_login = findViewById(R.id.sign_in_button);
         signUpBtn = findViewById(R.id.link_sign_up);
+        progressBar = findViewById(R.id.sign_in__progress_bar);
 
         //forgot_password = findViewById(R.id.forgot_password);
 
@@ -91,7 +92,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
-
                 auth.signInWithEmailAndPassword(txt_email, txt_password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -107,7 +107,6 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             }
                         });
-
                 progressBar.setVisibility(View.GONE);
             }
         });
