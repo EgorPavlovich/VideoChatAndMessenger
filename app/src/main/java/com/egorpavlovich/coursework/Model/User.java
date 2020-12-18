@@ -8,9 +8,11 @@ public class User {
     private String eMail;
     private String password;
     private String imageURL;
+    private String status;
+    private String search;
 
 
-    public User(String id, String fullName, String gender, String dateOfBirth, String eMail, String password, String imageURL) {
+    public User(String id, String fullName, String gender, String dateOfBirth, String eMail, String password, String imageURL, String status, String search) {
         this.id = id;
         this.fullName = fullName;
         this.gender = gender;
@@ -18,6 +20,8 @@ public class User {
         this.eMail = eMail;
         this.password = password;
         this.imageURL = imageURL;
+        this.status = status;
+        this.search = search;
     }
 
     public User() {
@@ -32,23 +36,31 @@ public class User {
         return fullName;
     }
 
-    public String geteMail() {
-        return eMail;
-    }
-
-    public String getImageURL() {
-        return imageURL;
+    public String getGender() {
+        return gender;
     }
 
     public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public String getGender() {
-        return gender;
+    public String geteMail() {
+        return eMail;
     }
 
     public String getPassword() {
         return password;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getSearch() {
+        return search;
     }
 }
