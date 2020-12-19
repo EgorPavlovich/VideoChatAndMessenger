@@ -1,6 +1,7 @@
 package com.egorpavlovich.coursework;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,12 +38,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
 
-    FirebaseUser firebaseUser;
-    DatabaseReference reference;
-
-    TextView drawerFullName, drawerEMail;
-    CircleImageView drawerImage;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,10 +53,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         actionBarDrawerToggle.syncState();
-
-        drawerImage = findViewById(R.id.drawer_imageView);
-        drawerFullName = findViewById(R.id.drawer_full_name);
-        drawerEMail = findViewById(R.id.drawer_email);
 
         // default
         fragmentManager = getSupportFragmentManager();
@@ -80,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         drawerLayout.closeDrawer(GravityCompat.START);
         switch (item.getItemId()){
             case R.id.menu_profile: {
+                toolbar.setBackgroundColor(Color.parseColor("#3F51B5"));
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.container_fragment, new ProfileFragment());
@@ -87,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             return true;
             case R.id.menu_users: {
+                toolbar.setBackgroundColor(Color.parseColor("#3F51B5"));
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.container_fragment, new UsersFragment());
@@ -94,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             return true;
             case R.id.menu_messages: {
+                toolbar.setBackgroundColor(Color.TRANSPARENT);
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.container_fragment, new ChatsFragment());
@@ -101,34 +95,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             return true;
             case R.id.menu_logout: {
+                toolbar.setBackgroundColor(Color.parseColor("#3F51B5"));
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(MainActivity.this, StartActivity.class);
-                startActivity(intent);
-                finish();
+                startActivity(new Intent(MainActivity.this, StartActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
             return true;
         }
         return false;
     }
-
-//    private void status(String status){
-//        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
-//
-//        HashMap<String, Object> hashMap = new HashMap<>();
-//        hashMap.put("status", status);
-//
-//        reference.updateChildren(hashMap);
-//    }
-//
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        status("online");
-//    }
-//
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        status("offline");
-//    }
 }

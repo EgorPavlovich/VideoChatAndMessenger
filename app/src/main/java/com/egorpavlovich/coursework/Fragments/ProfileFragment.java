@@ -162,7 +162,7 @@ public class ProfileFragment extends Fragment{
 
                         pd.dismiss();
                     } else {
-                        Toast.makeText(getContext(), "Failed!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Неудача!", Toast.LENGTH_SHORT).show();
                         pd.dismiss();
                     }
                 }
@@ -174,7 +174,7 @@ public class ProfileFragment extends Fragment{
                 }
             });
         } else {
-            Toast.makeText(getContext(), "No image selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Изображение не выбрано!", Toast.LENGTH_SHORT).show();
         }
     }
 
