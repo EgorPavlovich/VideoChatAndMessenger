@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 //        getSupportActionBar().setTitle("Login");
@@ -45,6 +46,12 @@ public class LoginActivity extends AppCompatActivity {
         btn_login = findViewById(R.id.sign_in_button);
         signUpBtn = findViewById(R.id.link_sign_up);
         progressBar = findViewById(R.id.sign_in__progress_bar);
+
+        String tag_email = getIntent().getStringExtra("#e-mail");
+        String tag_password = getIntent().getStringExtra("#password");
+
+        email.setText(tag_email);
+        password.setText(tag_password);
 
         //forgot_password = findViewById(R.id.forgot_password);
 
@@ -60,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v){
                 if (v.getId() == R.id.link_sign_up) {
                     Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                    intent.putExtra("#e-mail", email.getText().toString().trim());
+                    intent.putExtra("#password", password.getText().toString().trim());
                     startActivity(intent);
                 }
             }
