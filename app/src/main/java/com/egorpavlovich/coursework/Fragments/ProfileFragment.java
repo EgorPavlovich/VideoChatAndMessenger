@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,7 +44,7 @@ import static android.app.Activity.RESULT_OK;
 
 public class ProfileFragment extends Fragment{
 
-    CircleImageView image_profile;
+    ImageView image_profile, change_image;
     TextView userName, userEMail, userDateOfBirth, userGender;
 
     TextView drawerFullName, drawerEMail;
@@ -64,6 +65,7 @@ public class ProfileFragment extends Fragment{
         View drawerView = inflater.inflate(R.layout.drawer_header, container, false);
 
         image_profile = view.findViewById(R.id.profile_image);
+        change_image = view.findViewById(R.id.profile_change_image);
         userName = view.findViewById(R.id.profile_full_name);
         userEMail = view.findViewById(R.id.profile_email);
         userDateOfBirth = view.findViewById(R.id.profile_date_of_birth);
@@ -106,7 +108,7 @@ public class ProfileFragment extends Fragment{
             }
         });
 
-        image_profile.setOnClickListener(new View.OnClickListener() {
+        change_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openImage();
@@ -131,7 +133,7 @@ public class ProfileFragment extends Fragment{
 
     private void uploadImage(){
         final ProgressDialog pd = new ProgressDialog(getContext());
-        pd.setMessage("Uploading");
+        pd.setMessage("Загрузка...");
         pd.show();
 
         if (imageUri != null){

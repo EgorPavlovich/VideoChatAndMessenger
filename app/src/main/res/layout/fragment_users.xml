@@ -5,25 +5,49 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.UsersFragment">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/layout_search_users"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="70sp">
+
         <EditText
             android:id="@+id/search_users"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5sp"
-            android:textColorHint="@color/white"
+            android:textSize="18sp"
+            android:textColor="#fff"
             android:hint="Поиск..."
+            android:paddingLeft="30sp"
+            android:textColorHint="@color/white"
+            android:background="@drawable/ic_vd_search"
             />
-    </LinearLayout>
+    </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <RelativeLayout
         android:layout_below="@id/layout_search_users"
-        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#e6e6e6"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <ProgressBar
+                android:id="@+id/users_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+            </ProgressBar>
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </RelativeLayout>

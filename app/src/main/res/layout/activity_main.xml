@@ -18,14 +18,16 @@
         android:layout_height="wrap_content" />
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/navigationView"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
         app:menu="@menu/drawer_menu"
         app:headerLayout="@layout/drawer_header"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true">
-
+        android:background="@color/white"
+        android:outlineAmbientShadowColor="@color/teal_200"
+        app:itemTextColor="#2196F3">
     </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>

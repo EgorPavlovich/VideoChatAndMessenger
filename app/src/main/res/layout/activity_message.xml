@@ -59,6 +59,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/text_send"
             android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:textSize="18sp"
             android:hint="Введите сообщение..."
             android:layout_toLeftOf="@id/btn_send"
             android:layout_centerVertical="true"/>
