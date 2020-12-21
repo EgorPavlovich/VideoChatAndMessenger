@@ -22,20 +22,28 @@
                 android:textColor="@color/design_default_color_primary_dark"
                 android:textStyle="bold"/>
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+            <ImageView
                 android:id="@+id/profile_image"
+                android:layout_width="250sp"
+                android:layout_height="250sp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="50sp"
                 android:src="@mipmap/ic_launcher"/>
+
+            <ImageView
+                android:id="@+id/profile_change_image"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginTop="250sp"
+                android:layout_marginLeft="50sp"
+                android:src="@drawable/ic_change_photo"/>
 
             <TextView
                 android:id="@+id/profile_full_name"
+                android:layout_below="@id/profile_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ФИО: "
-                android:layout_below="@id/profile_image"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10sp"
                 android:textColor="@color/design_default_color_primary_dark"
@@ -45,20 +53,20 @@
 
             <TextView
                 android:id="@+id/profile_email"
+                android:layout_below="@id/profile_full_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="E-mail: "
-                android:layout_below="@id/profile_full_name"
                 android:layout_centerHorizontal="true"
                 android:textStyle="bold"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/profile_date_of_birth"
+                android:layout_below="@id/profile_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Дата рождения: "
-                android:layout_below="@id/profile_email"
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/design_default_color_primary_dark"
                 android:textStyle="bold"
@@ -66,10 +74,10 @@
 
             <TextView
                 android:id="@+id/profile_gender"
+                android:layout_below="@id/profile_date_of_birth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Пол: "
-                android:layout_below="@id/profile_date_of_birth"
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/design_default_color_primary_dark"
                 android:textStyle="bold"

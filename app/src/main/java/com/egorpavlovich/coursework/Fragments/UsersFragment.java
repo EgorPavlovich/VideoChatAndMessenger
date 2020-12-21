@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,6 +33,7 @@ import java.util.List;
 public class UsersFragment extends Fragment {
 
     private RecyclerView recyclerView;
+    private ProgressBar progressBar;
 
     private UserAdapter userAdapter;
     private List<User> mUsers;
@@ -46,6 +48,8 @@ public class UsersFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        progressBar = view.findViewById(R.id.users_progress_bar);
 
         mUsers = new ArrayList<>();
 
@@ -73,7 +77,7 @@ public class UsersFragment extends Fragment {
     }
 
     private void searchUsers(String s) {
-
+        progressBar.setVisibility(View.VISIBLE);
         final FirebaseUser fuser = FirebaseAuth.getInstance().getCurrentUser();
         Query query = FirebaseDatabase.getInstance().getReference("Users").orderByChild("search")
                 .startAt(s)
@@ -102,11 +106,11 @@ public class UsersFragment extends Fragment {
 
             }
         });
-
+        progressBar.setVisibility(View.GONE);
     }
 
     private void readUsers() {
-
+        progressBar.setVisibility(View.VISIBLE);
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
 
@@ -134,6 +138,7 @@ public class UsersFragment extends Fragment {
 
             }
         });
+        progressBar.setVisibility(View.GONE);
     }
 
 }

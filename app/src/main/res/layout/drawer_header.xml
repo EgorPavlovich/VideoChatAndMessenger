@@ -1,59 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@drawable/side_nav_bar"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <LinearLayout
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:id="@+id/drawer_imageView"
+        android:paddingTop="8sp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/drawer_full_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        tools:ignore="MissingConstraints"
-        android:orientation="vertical">
+        android:layout_below="@id/drawer_imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5sp"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:text="ФИО: "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_700" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:padding="8dp"
-                android:layout_height="wrap_content">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:id="@+id/drawer_imageView"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="50dp"
-                    android:src="@mipmap/ic_launcher"/>
-
-                <TextView
-                    android:id="@+id/drawer_full_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ФИО: "
-                    android:layout_below="@id/drawer_imageView"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10sp"
-                    android:textColor="@color/design_default_color_primary_dark"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    />
-
-                <TextView
-                    android:id="@+id/drawer_email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="E-mail: "
-                    android:layout_below="@id/drawer_full_name"
-                    android:layout_centerHorizontal="true"
-                    android:textStyle="bold"
-                    android:textSize="10sp" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/drawer_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/drawer_full_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5sp"
+        android:text="E-mail: "
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/Blue"/>
+</LinearLayout>

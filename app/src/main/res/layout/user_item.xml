@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_margin="0.25sp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="50dp"

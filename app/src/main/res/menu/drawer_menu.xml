@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
 
     <item android:title="Общие">
-        <menu>
-            <item
-                android:id="@+id/menu_profile"
-                android:title="Профиль" />
-            <item
-                android:id="@+id/menu_users"
-                android:title="Пользователи" />
-            <item
-                android:id="@+id/menu_messages"
-                android:title="Сообщения" />
-        </menu>
+        <group android:checkableBehavior="single" >
+            <menu>
+                <item
+                    android:id="@+id/menu_profile"
+                    android:title="Профиль"
+                    android:icon="@drawable/ic_menu_profile"/>
+                <item
+                    android:id="@+id/menu_users"
+                    android:title="Пользователи"
+                    android:icon="@drawable/vd_friends"/>
+                <item
+                    android:id="@+id/menu_messages"
+                    android:title="Сообщения"
+                    android:icon="@drawable/vd_chat"/>
+            </menu>
+        </group>
+
     </item>
 
-
     <item android:title="Аккаунт">
+        <group android:checkableBehavior="single">
         <menu>
             <item
                 android:id="@+id/menu_logout"
-                android:title="Выход из аккаунта" />
+                android:title="Выход из аккаунта"
+                android:icon="@drawable/ic_menu_logout"/>
         </menu>
+        </group>
     </item>
 
 </menu>

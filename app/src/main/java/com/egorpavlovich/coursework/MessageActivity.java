@@ -284,7 +284,7 @@ public class MessageActivity extends AppCompatActivity {
         editor.apply();
     }
 
-    private void status(String status){
+    public void status(String status){
         reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
 
         HashMap<String, Object> hashMap = new HashMap<>();
