@@ -62,6 +62,7 @@
             android:textColor="@color/black"
             android:textSize="18sp"
             android:hint="Введите сообщение..."
+            android:textColorHint="#656565"
             android:layout_toLeftOf="@id/btn_send"
             android:layout_centerVertical="true"/>
 

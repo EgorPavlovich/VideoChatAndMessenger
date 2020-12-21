@@ -30,7 +30,7 @@
         android:text="ФИО: "
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/purple_700" />
+        android:textColor="#FFEB3B" />
 
     <TextView
         android:id="@+id/drawer_email"
@@ -42,5 +42,5 @@
         android:text="E-mail: "
         android:textSize="12sp"
         android:textStyle="bold"
-        android:textColor="@color/Blue"/>
+        android:textColor="@color/white"/>
 </LinearLayout>

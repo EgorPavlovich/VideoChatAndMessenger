@@ -60,7 +60,6 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
                 String txt_fullName = fullName.getText().toString().trim();
                 String txt_gender  = gender.getText().toString().trim();
                 String txt_dateOfBirth  = dateOfBirth.getText().toString().trim();
@@ -86,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
                     password.setError("Пароль должен содержать минимум 6 символов!");
                     return;
                 }
-
+                progressBar.setVisibility(View.VISIBLE);
                 auth = FirebaseAuth.getInstance();
 
                 register(txt_fullName, txt_gender, txt_dateOfBirth, txt_eMail, txt_password);

@@ -97,8 +97,8 @@ public class ProfileFragment extends Fragment{
                     image_profile.setImageResource(R.mipmap.ic_launcher);
                     drawerImage.setImageResource(R.mipmap.ic_launcher);
                 } else {
-                    Glide.with(getContext()).load(user.getImageURL()).into(image_profile);
-                    Glide.with(getContext()).load(user.getImageURL()).into(drawerImage);
+                    Glide.with(view.getContext()).load(user.getImageURL()).into(image_profile);
+                    //Glide.with(drawerView.getContext()).load(user.getImageURL()).into(drawerImage);
                 }
             }
 

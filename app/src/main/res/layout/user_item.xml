@@ -14,15 +14,16 @@
         android:src="@mipmap/ic_launcher"/>
 
     <TextView
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="username"
-        android:id="@+id/username"
         android:layout_toRightOf="@id/user_image"
         android:layout_toEndOf="@id/user_image"
         android:layout_marginLeft="10dp"
         android:layout_centerVertical="true"
-        android:textSize="18sp"/>
+        android:text="username"
+        android:textSize="18sp"
+        android:textColor="@color/black"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="15dp"
