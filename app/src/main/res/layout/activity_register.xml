@@ -111,6 +111,7 @@
             android:background="@drawable/vd_edit_text"
             android:hint="ФИО"
             android:inputType="textPersonName"
+            android:maxLength="300"
             android:paddingLeft="20sp"
             android:layout_marginTop="5sp"
             android:layout_marginLeft="25sp"
@@ -121,10 +122,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
-        <EditText
+
+        <Spinner
             android:id="@+id/gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:entries="@array/gender"
             android:background="@drawable/vd_edit_text"
             android:hint="Пол"
             android:paddingLeft="20sp"
@@ -144,6 +147,7 @@
             android:background="@drawable/vd_edit_text"
             android:hint="Дата рождения"
             android:inputType="date"
+            android:maxLength="10"
             android:paddingLeft="20sp"
             android:layout_marginLeft="25sp"
             android:layout_marginRight="25sp"
@@ -161,6 +165,7 @@
             android:background="@drawable/vd_edit_text"
             android:hint="E-mail"
             android:inputType="textEmailAddress"
+            android:maxLength="254"
             android:paddingLeft="20sp"
             android:layout_marginLeft="25sp"
             android:layout_marginRight="25sp"
@@ -178,6 +183,7 @@
             android:background="@drawable/vd_edit_text"
             android:hint="Пароль"
             android:inputType="textPassword"
+            android:maxLength="16"
             android:paddingLeft="20sp"
             android:layout_marginLeft="25sp"
             android:layout_marginRight="25sp"

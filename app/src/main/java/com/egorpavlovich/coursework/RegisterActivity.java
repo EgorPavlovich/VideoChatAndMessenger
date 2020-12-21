@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +26,8 @@ import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    TextView fullName, gender, dateOfBirth, eMail, password;
+    TextView fullName, dateOfBirth, eMail, password;
+    Spinner gender;
     Button btn_register;
     private TextView signInBtn;
     private ProgressBar progressBar;
@@ -47,11 +49,19 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register = findViewById(R.id.create_account_button);
         signInBtn = findViewById(R.id.link_sign_in);
 
+        String tag_email = getIntent().getStringExtra("#e-mail");
+        String tag_password = getIntent().getStringExtra("#password");
+
+        eMail.setText(tag_email);
+        password.setText(tag_password);
+
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 if (v.getId() == R.id.link_sign_in) {
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    intent.putExtra("#e-mail", eMail.getText().toString().trim());
+                    intent.putExtra("#password", password.getText().toString().trim());
                     startActivity(intent);
                 }
             }
@@ -61,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String txt_fullName = fullName.getText().toString().trim();
-                String txt_gender  = gender.getText().toString().trim();
+                String txt_gender_selected = gender.getSelectedItem().toString();
                 String txt_dateOfBirth  = dateOfBirth.getText().toString().trim();
                 String txt_eMail = eMail.getText().toString().trim();
                 String txt_password = password.getText().toString().trim();
@@ -85,10 +95,16 @@ public class RegisterActivity extends AppCompatActivity {
                     password.setError("Пароль должен содержать минимум 6 символов!");
                     return;
                 }
+
+                if(txt_dateOfBirth.length() != 10){
+                    dateOfBirth.setError("Дата рождения должна содержать строго 10 символов!");
+                    return;
+                }
+
                 progressBar.setVisibility(View.VISIBLE);
                 auth = FirebaseAuth.getInstance();
 
-                register(txt_fullName, txt_gender, txt_dateOfBirth, txt_eMail, txt_password);
+                register(txt_fullName, txt_gender_selected, txt_dateOfBirth, txt_eMail, txt_password);
                 progressBar.setVisibility(View.GONE);
             }
         });
