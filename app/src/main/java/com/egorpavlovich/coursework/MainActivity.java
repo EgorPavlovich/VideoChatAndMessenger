@@ -25,8 +25,10 @@ import com.bumptech.glide.Glide;
 import com.egorpavlovich.coursework.Fragments.ChatsFragment;
 import com.egorpavlovich.coursework.Fragments.ProfileFragment;
 import com.egorpavlovich.coursework.Fragments.UsersFragment;
+import com.egorpavlovich.coursework.Fragments.VideoChatFragment;
 import com.egorpavlovich.coursework.Model.Chat;
 import com.egorpavlovich.coursework.Model.User;
+import com.egorpavlovich.coursework.video_chat.main.AppRTCMainActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -193,6 +195,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.container_fragment, new ChatsFragment());
+                fragmentTransaction.commit();
+            }
+            return true;
+            case R.id.menu_video_chat: {
+                toolbar.setBackgroundColor(Color.TRANSPARENT);
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.container_fragment, new VideoChatFragment());
                 fragmentTransaction.commit();
             }
             return true;

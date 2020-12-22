@@ -20,4 +20,18 @@
     <style name="MessageStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:background">@android:color/white</item>
     </style>
+
+    <style name="AppTheme.Call" parent="Theme.VideoChatAndMessenger">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Theme.VideoChatAndMessenger.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
