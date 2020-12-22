@@ -2,9 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.egorpavlovich.coursework">
 
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application
         android:allowBackup="true"
@@ -31,6 +43,16 @@
         <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
         <activity android:name=".MessageActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ResetPasswordActivity" android:screenOrientation="portrait"/>
+
+        <activity android:name=".video_chat.main.AppRTCMainActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity android:name=".video_chat.CompleteActivity"/>
+        <activity android:name=".video_chat.call.CallActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="fullUser"/>
+        <activity android:name=".video_chat.MediaStreamActivity"/>
 
         <service android:name=".Notifications.MyFirebaseIdService"
             android:enabled="true"

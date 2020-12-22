@@ -23,6 +23,12 @@
                     android:icon="@drawable/vd_chat"
                     android:checkable="true"
                     app:actionViewClass="android.widget.TextView"/>
+                <item
+                    android:id="@+id/menu_video_chat"
+                    android:title="Видеочат"
+                    android:icon="@drawable/ic_video_camera"
+                    android:checkable="true"
+                    app:actionViewClass="android.widget.TextView"/>
             </group>
         </menu>
     </item>
